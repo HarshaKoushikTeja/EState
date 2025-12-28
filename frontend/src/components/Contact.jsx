@@ -11,8 +11,16 @@ const Contact = () => {
       setResult("Sending....");
       const formData = new FormData(event.target);
   
-      // Enter your Web3Forms Access Key below
-      formData.append("access_key", "f2c05a1a-59c8-4b93-8009-fd0479532c99");
+      // Get Web3Forms Access Key from environment variable
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      
+      if (!accessKey) {
+        toast.error("Web3Forms access key is not configured. Please check your .env file.");
+        setResult("");
+        return;
+      }
+      
+      formData.append("access_key", accessKey);
   
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",

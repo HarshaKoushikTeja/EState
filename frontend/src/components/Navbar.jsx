@@ -44,12 +44,12 @@ const Navbar = () => {
 
         {/* Sign Up / Logout Button */}
         {isLoggedIn ? (
-          <button onClick={handleLogout} className="hidden md:block bg-white px-8 py-2 rounded-full hover:bg-gray-200">
+          <button onClick={handleLogout} className="hidden md:block bg-white text-gray-900 px-8 py-2 rounded-full hover:bg-gray-200 font-medium">
             Logout
           </button>
         ) : (
           <Link to="/signup">
-            <button className="hidden md:block bg-white px-8 py-2 rounded-full hover:bg-gray-200">
+            <button className="hidden md:block bg-white text-gray-900 px-8 py-2 rounded-full hover:bg-gray-200 font-medium">
               Sign Up
             </button>
           </Link>
@@ -95,15 +95,15 @@ const Navbar = () => {
           {/* Sign Up / Logout Button */}
           {isLoggedIn ? (
             <li onClick={() => { setShowMobileMenu(false); handleLogout(); }}>
-              <button className="px-4 py-2 rounded-full inline-block">Logout</button>
+              <button className="px-4 py-2 rounded-full inline-block bg-gray-900 text-white hover:bg-gray-800">Logout</button>
             </li>
           ) : (
             <>
               <li onClick={() => setShowMobileMenu(false)}>
-                <Link to="/login" className="px-4 py-2 rounded-full inline-block">Login</Link>
+                <Link to="/login" className="px-4 py-2 rounded-full inline-block text-gray-900 hover:bg-gray-100">Login</Link>
               </li>
               <li onClick={() => setShowMobileMenu(false)}>
-                <Link to="/signup" className="px-4 py-2 rounded-full inline-block">Sign Up</Link>
+                <Link to="/signup" className="px-4 py-2 rounded-full inline-block bg-gray-900 text-white hover:bg-gray-800">Sign Up</Link>
               </li>
             </>
           )}

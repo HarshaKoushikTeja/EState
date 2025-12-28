@@ -8,7 +8,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";  // Import Login Page
 import Signup from "./pages/Signup"; // Import Signup Page
-import Navbar from "./components/Navbar"; // Ensure Navbar is imported
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -18,7 +17,6 @@ const App = () => {
     <Router>
       <div className="w-full overflow-hidden">
         <ToastContainer />
-        <Navbar /> 
         <Routes>
           
           <Route path="/login" element={<Login />} />
